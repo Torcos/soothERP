@@ -12,7 +12,7 @@ SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 --
--- Base de données: `samediprochain2_062_2`
+-- Base de données: `Sooth ERP 2_063_0`
 --
 
 -- --------------------------------------------------------
@@ -3620,19 +3620,19 @@ CREATE TABLE IF NOT EXISTS `documents_types` (
 --
 
 INSERT INTO `documents_types` (`id_type_doc`, `lib_type_doc`, `lib_type_printed`, `code_doc`, `id_type_groupe`, `actif`, `id_pdf_modele`) VALUES
-(1, 'Devis Client', 'Devis', 'DEV', 1, 1, 6),
-(2, 'Commande Client', 'BON DE COMMANDE', 'CDC', 1, 1, 5),
-(3, 'Bon de livraison Client', 'Bon de livraison', 'BLC', 1, 1, 4),
-(4, 'Facture Client', 'Facture', 'FAC', 1, 1, 2),
-(5, 'Devis Fournisseur', 'Cotation Fournisseur', 'DEF', 2, 1, 1),
-(6, 'Commande Fournisseur', 'Commande Fournisseur', 'CDF', 2, 1, 1),
+(1, 'Devis Client', 'Devis', 'DEV', 1, 1, 20),
+(2, 'Commande Client', 'Bon de commande', 'CDC', 1, 1, 22),
+(3, 'Bon de livraison Client', 'Bon de livraison', 'BLC', 1, 1, 19),
+(4, 'Facture Client', 'Facture', 'FAC', 1, 1, 21),
+(5, 'Devis Fournisseur', 'Cotation fournisseur', 'DEF', 2, 1, 1),
+(6, 'Commande Fournisseur', 'Commande fournisseur', 'CDF', 2, 1, 1),
 (7, 'Bon de réception Fournisseur', 'Bon de réception', 'BLF', 2, 1, 1),
-(8, 'Facture Fournisseur', 'Facture Fournisseur', 'FAF', 2, 1, 1),
-(9, 'Transfert de marchandises', 'Transfert de Marchandises', 'TRM', 3, 1, 7),
+(8, 'Facture Fournisseur', 'Facture fournisseur', 'FAF', 2, 1, 1),
+(9, 'Transfert de marchandises', 'Transfert de marchandises', 'TRM', 3, 1, 7),
 (10, 'Panier Client', 'Panier', 'PAC', 1, 1, 1),
 (11, 'Inventaire', 'Inventaire', 'INV', 3, 1, 1),
-(12, 'Bon de Fabrication', 'Bon de Fabrication', 'FAB', 3, 1, 8),
-(13, 'Bon de Désassemblage', 'Bon de Désassemblage', 'DES', 3, 1, 1),
+(12, 'Bon de Fabrication', 'Bon de fabrication', 'FAB', 3, 1, 8),
+(13, 'Bon de Désassemblage', 'Bon de désassemblage', 'DES', 3, 1, 1),
 (14, 'Modèle', 'Modèle de document', 'MOD', 0, 1, 1),
 (15, 'Ticket de caisse', 'Ticket de caisse', 'TIC', 1, 1, 1),
 (16, 'Cotation Client', 'Cotation', 'COT', 1, 1, 20);
@@ -4162,10 +4162,10 @@ INSERT INTO `doc_modeles_pdf` (`id_pdf_modele`, `id_type_doc`, `usage`) VALUES
 (1, 10, 'defaut'),
 (1, 11, 'defaut'),
 (1, 13, 'defaut'),
-(2, 4, 'defaut'),
-(4, 3, 'defaut'),
-(5, 2, 'defaut'),
-(6, 1, 'defaut'),
+(2, 4, 'actif'),
+(4, 3, 'actif'),
+(5, 2, 'actif'),
+(6, 1, 'actif'),
 (7, 9, 'defaut'),
 (8, 12, 'defaut'),
 (1, 4, 'inactif'),
@@ -4179,10 +4179,10 @@ INSERT INTO `doc_modeles_pdf` (`id_pdf_modele`, `id_type_doc`, `usage`) VALUES
 (11, 2, 'inactif'),
 (12, 3, 'inactif'),
 (13, 4, 'inactif'),
-(22, 2, 'actif'),
-(19, 3, 'actif'),
-(21, 4, 'actif'),
-(20, 1, 'actif'),
+(22, 2, 'defaut'),
+(19, 3, 'defaut'),
+(21, 4, 'defaut'),
+(20, 1, 'defaut'),
 (20, 16, 'defaut'),
 (25, 15, 'defaut');
 
@@ -7763,7 +7763,7 @@ INSERT INTO `taches_admin` (`id_tache_admin`, `lib_tache_admin`, `description`, 
 (36, 'Gérer les catégories de fournisseurs', 'Par exemple : Prestataires de services, Grossistes.<br />Permet également d''avoir des statistiques détaillées sur vos achats.', 'annuaire_gestion_categories_fournisseur.php', '2011-05-01 13:57:37', '0000-00-00 00:00:00'),
 (37, 'Gestion des exercices comptables', 'Veuillez définir la date de fin de votre premier exercice comptable.', 'compta_exercices.php', '2011-05-01 13:57:37', '0000-00-00 00:00:00'),
 (38, 'Gestion des catégories d''article du catalogue général', 'Vous permet de définir les catégories et sous catégories d''articles. Ainsi, vous pouvez définir les différents taux de marge pour chacune d''elles.<br />Permet également d''obtenir des statistiques détaillées sur vos ventes.', 'catalogue_categorie.php', '2011-05-01 13:57:37', '0000-00-00 00:00:00'),
-(39, 'Gestion des comptes bancaires', 'Permet de suivre vos comptes bancaires et d''automatiser certaines taches de comptabilité avec Lundi Matin Business.', 'compta_compte_bancaire.php', '2011-05-01 13:57:37', '0000-00-00 00:00:00'),
+(39, 'Gestion des comptes bancaires', 'Permet de suivre vos comptes bancaires et d''automatiser certaines taches de comptabilité avec SoothERP.', 'compta_compte_bancaire.php', '2011-05-01 13:57:37', '0000-00-00 00:00:00'),
 (40, 'Gestion des TPE', 'Si vous utiliser un Terminal de Paiement Electronique.<br />Permet de gérer les encaissements par Carte Bancaire.', 'compta_compte_tpes.php', '2011-05-01 13:57:37', '0000-00-00 00:00:00'),
 (41, 'Gestion des caisses', 'Si vous utilisez plusieurs caisses (réparties sur 1 ou plusieurs points de vente).<br />Permet de gérer les encaissements par chèque et espèces.', 'compta_compte_caisse.php', '2011-05-01 13:57:37', '0000-00-00 00:00:00'),
 (42, 'Gestion des cartes bancaires', 'Si vous possédez une carte bancaire.<br />\r\nPermet de gérer les règlements par Carte Bancaire (décaissement).', 'compta_compte_cbs.php', '2011-05-01 13:57:37', '0000-00-00 00:00:00'),
